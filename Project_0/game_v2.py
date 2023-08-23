@@ -25,8 +25,7 @@ def random_predict(number: int = 1) -> int:
         elif number < predict_number:  
             lockup = predict_number # обновляем верхний предел
         elif number > predict_number:
-            lockdown = predict_number # обновляем нижний предел
-            
+            lockdown = predict_number # обновляем нижний предел           
     return count
 
 
