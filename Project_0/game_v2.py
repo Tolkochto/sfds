@@ -15,16 +15,19 @@ def random_predict(number: int = 1) -> int:
         int: Число попыток
     """
     count = 0
-
+    predict_number = np.random.randint(1, 101)
+    lockdown = 1
+    lockup = 101
     while True:
-        count += 1
-        predict_number = np.random.randint(1, 101)  # предполагаемое число
+        count += 1  
         if number == predict_number:
             break  # выход из цикла если угадали
-        elif number < predict_number:
-            predict_number = np.random.randint(1, predict_number)
+        elif number < predict_number:  
+            lockup = predict_number
+            predict_number = np.random.randint(lockdown, lockup)
         elif number > predict_number:
-            predict_number = np.random.randint(predict_number, 101)
+            lockdown = predict_number
+            predict_number = np.random.randint(lockdown, lockup)
     return count
 
 
