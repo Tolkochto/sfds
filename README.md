@@ -12,3 +12,4 @@ From the [SkillFactory Data Science course](https://skillfactory.ru/data-scienti
 * [Проект 5. Задача регрессии](https://github.com/Tolkochto/sfds/tree/main/PROJECT-5.%20Задача%20регрессии)
 * [Проект 6. Сегментирование клиентов онлайн-магазина подарков](https://github.com/Tolkochto/sfds/tree/main/PROJECT-6.%20Сегментирование%20клиентов%20онлайн-магазина%20подарков)
 * [Итоговый проект](https://github.com/Tolkochto/sfds/tree/main/Итоговый_проект)
+* [Проект 1. Угадай знаменитость](https://github.com/Tolkochto/sfds/tree/main/PROJECT-1.%20Угадай%20знаменитость)
