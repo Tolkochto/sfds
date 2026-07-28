@@ -21,6 +21,6 @@ Cоздать правдоподобный прототип работающей
 
 Фото обучения лежат в [папке](https://github.com/Tolkochto/sfds/tree/main/PROJECT-4.%20Перенос%20стиля%20на%20мобильном%20устройстве/model/visualizations)
 
-[Приложение](https://github.com/Tolkochto/sfds/edit/main/PROJECT-4.%20Перенос%20стиля%20на%20мобильном%20устройстве/app-release.apk) 
+[Приложение](https://github.com/Tolkochto/sfds/blob/main/PROJECT-4.%20Перенос%20стиля%20на%20мобильном%20устройстве/app-release.apk) 
 
 [Пример работы приложения](https://github.com/Tolkochto/sfds/edit/main/PROJECT-4.%20Перенос%20стиля%20на%20мобильном%20устройстве/example.mp4) 
