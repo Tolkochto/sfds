@@ -23,4 +23,4 @@ Cоздать правдоподобный прототип работающей
 
 [Приложение](https://github.com/Tolkochto/sfds/blob/main/PROJECT-4.%20Перенос%20стиля%20на%20мобильном%20устройстве/app-release.apk) 
 
-[Пример работы приложения](https://github.com/Tolkochto/sfds/edit/main/PROJECT-4.%20Перенос%20стиля%20на%20мобильном%20устройстве/example.mp4) 
+[Пример работы приложения](https://github.com/Tolkochto/sfds/blob/main/PROJECT-4.%20Перенос%20стиля%20на%20мобильном%20устройстве/example.mp4) 
