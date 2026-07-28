@@ -1,0 +1,6 @@
+tensorflow==2.16.2
+tensorflow-metal
+tensorflow-hub
+pillow
+matplotlib
+numpy

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212">
+
+    <!-- Preview / result image -->
+    <ImageView
+        android:id="@+id/imageViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:background="#1E1E1E" />
+
+    <!-- Progress bar (hidden by default) -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:indeterminateTint="#FFFFFF" />
+
+    <!-- Instruction hint -->
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take a photo to begin"
+        android:textColor="#AAAAAA"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:paddingVertical="6dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="4dp"
+        android:text="💾  Save to Gallery"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <!-- Horizontal style picker -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stylesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:paddingHorizontal="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Take Photo button -->
+    <Button
+        android:id="@+id/btnTakePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:text="📷  Take Photo"
+        android:textSize="16sp" />
+
+</LinearLayout>

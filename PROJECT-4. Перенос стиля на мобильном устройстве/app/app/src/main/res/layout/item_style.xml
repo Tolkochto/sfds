@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="90dp"
+    android:layout_height="90dp"
+    android:layout_margin="6dp">
+
+    <ImageView
+        android:id="@+id/styleImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <!-- Selection highlight ring -->
+    <View
+        android:id="@+id/selectionRing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/style_selected_border"
+        android:visibility="gone" />
+
+</FrameLayout>
