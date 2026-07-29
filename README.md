@@ -15,4 +15,4 @@ From the [SkillFactory Data Science course](https://skillfactory.ru/data-scienti
 * [Проект 1. Угадай знаменитость](https://github.com/Tolkochto/sfds/tree/main/PROJECT-1.%20Угадай%20знаменитость)
 * [Проект 2. Детектирование медицинских масок](https://github.com/Tolkochto/sfds/tree/main/PROJECT-2.%20Детектирование%20медицинских%20масок)
 * [Проект 3. Сегментация космических аппаратов](https://github.com/Tolkochto/sfds/tree/main/PROJECT-3.%20Сегментация%20космических%20аппаратов)
-* [Проект 3. Сегментация космических аппаратов](https://github.com/Tolkochto/sfds/tree/main/PROJECT-4.%20Перенос%20стиля%20на%20мобильном%20устройстве)
+* [Проект 4. Перенос стиля на мобильном устройстве](https://github.com/Tolkochto/sfds/tree/main/PROJECT-4.%20Перенос%20стиля%20на%20мобильном%20устройстве)
