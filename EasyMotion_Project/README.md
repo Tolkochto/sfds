@@ -44,15 +44,13 @@ EasyMotion/
 │   └── metrics.py          # Функции cosine_distance, weight_distance
 ├── myproject_data/
 │   ├── __init__.py
-│   └── video_loader.py     # Парсинг видео и функция extract_all_keypoints
+│   └── video_loader.py     # Функция extract_all_keypoints
 ├── myproject_models/
 │   ├── __init__.py
 │   └── pose_model.py       # Инициализация Keypoint R-CNN
 ├── examples/
-│   └── Human_Pose_Skeleton.ipynb # Jupyter Notebook с экспериментами
-├── images/
-│   └── running_girl.png    # Тестовое изображение для инференса
+│   └── Squat_Analysis.ipynb # Чистый ноутбук только с анализом приседа
 ├── scripts/
-│   └── main.py             # Скрипт запуска основного пайплайна (DTW рендер)
+│   └── main.py             # Скрипт запуска пайплайна
 ├── README.md               # Описание проекта
 └── requirements.txt        # Зависимости
