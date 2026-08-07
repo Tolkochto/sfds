@@ -113,4 +113,4 @@ def evaluate_squat_dtw_swapped(ref_video, my_video, output_video, model, device,
         
     cap_my.release()
     out.release()
-    print(f"✅ Готово! Результат сохранен в {output_video}")
+    print(f"Готово! Результат сохранен в {output_video}")
