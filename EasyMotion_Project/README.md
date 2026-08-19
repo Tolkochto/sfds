@@ -63,3 +63,34 @@ EasyMotion/
 │   └── main.py             # Скрипт запуска пайплайна
 ├── README.md               # Описание проекта
 └── requirements.txt        # Зависимости
+
+## Инструкция по установке (Installation)
+
+Для запуска проекта локально или на сервере выполните следующие шаги:
+
+1. Склонируйте репозиторий:
+   ```bash
+   git clone [https://github.com/Tolkochto/sfds.git](https://github.com/Tolkochto/sfds.git)
+   cd sfds/EasyMotion_Project
+2. Создайте и активируйте виртуальное окружение (рекомендуется):
+  ```bash
+  python3 -m venv venv
+  source venv/bin/activate  # Для Linux/Mac
+  venv\Scripts\activate     # Для Windows
+3. Установите необходимые зависимости:
+  ```bash
+  pip install -r requirements.txt
+
+## Как запускать проект
+
+Основной пайплайн запускается напрямую из командной строки терминала.
+
+  ```bash
+  python scripts/main.py --ref <путь_к_эталону> --target <путь_к_вашему_видео> --output <куда_сохранить>
+
+Пример запуска на тестовых данных:
+  ```bash
+  python scripts/main.py \
+  --ref data/ref_squat.mp4 \
+  --target data/my_squat.mp4 \
+  --output results/final_squat.mp4
