@@ -13,3 +13,6 @@ fastdtw>=0.3.4
 
 # Visualization
 matplotlib>=3.7.0
+
+# Utilities
+tqdm>=4.65.0
