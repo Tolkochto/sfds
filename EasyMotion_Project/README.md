@@ -38,29 +38,30 @@
 * **Deep Learning:** PyTorch, Torchvision
 * **Computer Vision:** OpenCV (cv2), PIL
 * **Математика и алгоритмы:** NumPy, SciPy, FastDTW
-* **Визуализация:** Matplotlib
+* **Визуализация:** Matplotlib, tqdm (логирование)
 
 ## 📁 Структура проекта
 
 ```text
-EasyMotion/
+EasyMotion_Project/
 ├── data/
 │   ├── ref_squat.mp4       # Эталонное видео (тренер)
 │   └── my_squat.mp4        # Видео пользователя
+├── images/                 # Скриншоты работы пайплайна
 ├── src/
 │   ├── __init__.py
 │   ├── math_utils.py       # Аффинные преобразования, pad, unpad
 │   └── metrics.py          # Функции cosine_distance, weight_distance
 ├── myproject_data/
 │   ├── __init__.py
-│   └── video_loader.py     # Функция extract_all_keypoints
+│   └── video_loader.py     # Функция extract_all_keypoints с fallback-логикой
 ├── myproject_models/
 │   ├── __init__.py
 │   └── pose_model.py       # Инициализация Keypoint R-CNN
 ├── examples/
 │   └── Squat_Analysis.ipynb # Чистый ноутбук только с анализом приседа
 ├── scripts/
-│   └── main.py             # Скрипт запуска пайплайна
+│   └── main.py             # Скрипт запуска пайплайна (через аргументы)
 ├── README.md               # Описание проекта
 └── requirements.txt        # Зависимости
 ```
@@ -71,7 +72,7 @@ EasyMotion/
 
 1. Склонируйте репозиторий:
    ```bash
-   git clone [https://github.com/Tolkochto/sfds.git](https://github.com/Tolkochto/sfds.git)
+   git clone https://github.com/Tolkochto/sfds.git
    cd sfds/EasyMotion_Project
    ```
 2. Создайте и активируйте виртуальное окружение (рекомендуется):
@@ -98,3 +99,5 @@ EasyMotion/
   --target data/my_squat.mp4 \
   --output results/final_squat.mp4
    ```
+**Что должно получиться на выходе:**
+Скрипт выведет в консоль процесс обработки через прогресс-бары `tqdm` (парсинг видео, DTW, рендеринг). В указанной папке появится итоговый видеофайл `.mp4`. На видео поверх движущегося пользователя будет наложен красный скелет (суставы пользователя) и зеленый скелет (идеальная траектория тренера, адаптированная под пропорции пользователя). В левом верхнем углу в реальном времени будут отображаться метрики `Cos Sim` (целевое значение ~1.0) и `W-Dist`.
