@@ -55,7 +55,6 @@ def evaluate_squat_dtw_swapped(ref_video, my_video, output_video, model, device,
     orig_width = int(cap_my.get(cv2.CAP_PROP_FRAME_WIDTH))
     orig_height = int(cap_my.get(cv2.CAP_PROP_FRAME_HEIGHT))
     
-    # Применяем масштаб (720p), чтобы координаты совпали с кадром
     if orig_height > 720:
         scale = 720 / orig_height
         render_width = int(orig_width * scale)
@@ -69,6 +68,10 @@ def evaluate_squat_dtw_swapped(ref_video, my_video, output_video, model, device,
     
     logging.info("Начало рендеринга итогового видео...")
     frame_idx = 0
+    
+    # 📌 ДОБАВЛЕНО: списки для сбора метрик со всех кадров
+    all_cos_sim = []
+    all_w_dist = []
     
     with tqdm(total=total_frames, desc="Рендеринг", unit="кадр") as pbar:
         while True:
@@ -86,15 +89,18 @@ def evaluate_squat_dtw_swapped(ref_video, my_video, output_video, model, device,
                 my_c = my_conf[frame_idx]
                 ref_pose = ref_kps[ref_idx]
                 
-                # Прокрустов анализ
                 A = get_affine_transform(ref_pose, my_pose)
                 ref_pose_transformed = unpad(pad(ref_pose) @ A)
                 
                 cos_sim = cosine_distance(my_pose, ref_pose_transformed)
                 w_dist = weight_distance(my_pose, ref_pose_transformed, my_c)
                 
-                draw_skeleton(frame, ref_pose_transformed, limbs, (0, 255, 0)) # Зеленый - эталон
-                draw_skeleton(frame, my_pose, limbs, (0, 0, 255)) # Красный - пользователь
+                # 📌 ДОБАВЛЕНО: сохраняем метрики текущего кадра
+                all_cos_sim.append(cos_sim)
+                all_w_dist.append(w_dist)
+                
+                draw_skeleton(frame, ref_pose_transformed, limbs, (0, 255, 0))
+                draw_skeleton(frame, my_pose, limbs, (0, 0, 255))
                 
                 cv2.putText(frame, f"Cos Sim: {cos_sim:.3f}", (40, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 4)
                 cv2.putText(frame, f"Cos Sim: {cos_sim:.3f}", (40, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
@@ -107,6 +113,15 @@ def evaluate_squat_dtw_swapped(ref_video, my_video, output_video, model, device,
             
     cap_my.release()
     out.release()
+    
+    # вывод итоговых средних значений в консоль
+    if all_cos_sim:
+        final_cos = np.mean(all_cos_sim)
+        final_dist = np.mean(all_w_dist)
+        logging.info(f"   ИТОГОВЫЕ МЕТРИКИ ПО ВСЕМУ УПРАЖНЕНИЮ:")
+        logging.info(f"   Среднее Cosine Similarity: {final_cos:.3f}")
+        logging.info(f"   Среднее Weighted Distance: {final_dist:.1f} px")
+        
     logging.info(f"Готово! Результат сохранен в {output_video}")
 
 
