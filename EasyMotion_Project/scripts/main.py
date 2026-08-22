@@ -118,11 +118,12 @@ def evaluate_squat_dtw_swapped(ref_video, my_video, output_video, model, device,
     if all_cos_sim:
         final_cos = np.mean(all_cos_sim)
         final_dist = np.mean(all_w_dist)
-        logging.info(f"   ИТОГОВЫЕ МЕТРИКИ ПО ВСЕМУ УПРАЖНЕНИЮ:")
-        logging.info(f"   Среднее Cosine Similarity: {final_cos:.3f}")
-        logging.info(f"   Среднее Weighted Distance: {final_dist:.1f} px")
+        print(f"Среднее Косинусное сходство (Cosine Similarity): {final_cos:.3f}")
+        print(f"Среднее Взвешенное совпадение (Weighted Distance): {final_dist:.1f} px")
+    else:
+        print("\nПредупреждение: не удалось собрать кадры для расчета метрик.\n")
         
-    logging.info(f"Готово! Результат сохранен в {output_video}")
+    print(f"Готово! Результат сохранен в {output_video}")
 
 
 if __name__ == "__main__":
